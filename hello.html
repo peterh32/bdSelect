@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>hello</title>
+    </head>
+    <body>
+        <div id='root'>this is the monkey's finest hour</div>
+        <script type='module'>
+            import {Component, e, render} from './node_modules/bd-core/lib.js';
+            import SearchBar from './components/searchbar.js';
+
+            class HelloWorld extends Component {
+                bdElements() {
+                    return e('div', {},
+                        e('span',    {}, 'hello'),
+                        e(SearchBar, {}), 
+                    );
+                }
+            }
+
+            render(HelloWorld, {}, 'root', 'replace');
+        </script>
+    </body>
+</html>
+
